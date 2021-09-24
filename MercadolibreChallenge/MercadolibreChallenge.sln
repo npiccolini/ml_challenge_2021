@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercadolibreChallenge.API", "MercadolibreChallenge.API\MercadolibreChallenge.API.csproj", "{BD3ABD36-374B-43EF-9F37-C90AEA8E29BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercadolibreChallenge.APITests", "MercadolibreChallenge.APITests\MercadolibreChallenge.APITests.csproj", "{8C0A17C9-C827-4676-94C5-2B807BB355B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD3ABD36-374B-43EF-9F37-C90AEA8E29BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3ABD36-374B-43EF-9F37-C90AEA8E29BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3ABD36-374B-43EF-9F37-C90AEA8E29BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3ABD36-374B-43EF-9F37-C90AEA8E29BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C0A17C9-C827-4676-94C5-2B807BB355B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0A17C9-C827-4676-94C5-2B807BB355B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0A17C9-C827-4676-94C5-2B807BB355B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0A17C9-C827-4676-94C5-2B807BB355B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC1C0DCB-2307-4A18-A160-F0F993352BC2}
+	EndGlobalSection
+EndGlobal
