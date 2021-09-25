@@ -40,7 +40,7 @@ namespace MercadolibreChallenge.API.Managers.Implementation
         {
             var count_human_dna = list.Count(x => x.Mutant == false);
             var count_mutant_dna = list.Count(x => x.Mutant == true);
-            var ratio = count_mutant_dna / (decimal)count_human_dna;
+            var ratio = count_human_dna == 0 ? 0 : count_mutant_dna / (decimal)count_human_dna;
 
             return new StatsDto { ADN = new DnaDto { count_mutant_dna = count_mutant_dna, count_human_dna = count_human_dna, ratio = ratio } };
         }
