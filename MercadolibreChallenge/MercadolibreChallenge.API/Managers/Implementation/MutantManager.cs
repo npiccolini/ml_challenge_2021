@@ -21,12 +21,13 @@ namespace MercadolibreChallenge.API.Managers.Implementation
             var matches = 0;
             ValidateSecuence(dna);
 
+            //convierto el array en una matriz
+            var matrixDna = ConvertToMatrix(dna);
+
             //recorro la secuencia horizontalmente
-            matches = CheckArrayDna(dna, matches);
+            matches = CheckArrayDna(Matrix2dToArrayHorizontal(matrixDna), matches);
             if (matches < MAX_MATCHES)
             {
-                //convierto el array en una matriz
-                var matrixDna = ConvertToMatrix(dna);
                 //recorro la secuencia verticalmente
                 matches = CheckArrayDna(Matrix2dToArrayVertical(matrixDna), matches);
                 if (matches < MAX_MATCHES)
@@ -114,6 +115,24 @@ namespace MercadolibreChallenge.API.Managers.Implementation
                 arrayV[k] = row;
             }
             return arrayV;
+        }
+
+        private string[] Matrix2dToArrayHorizontal(char[,] matrix)
+        {
+            string[] arrayH = new string[matrix.GetLength(0)];
+            for (int k = 0; k <= matrix.GetLength(0) - 1; k++)
+            {
+                var m = k;
+                var n = 0;
+                var row = string.Empty;
+                while (n <= matrix.GetLength(1) - 1)
+                {
+                    row += matrix[m, n];
+                    n++;
+                }
+                arrayH[k] = row;
+            }
+            return arrayH;
         }
 
         /// <summary>
@@ -207,9 +226,18 @@ namespace MercadolibreChallenge.API.Managers.Implementation
         /// <returns></returns>
         private bool CheckRowDna(string dnaRow)
         {
-            foreach (var letter in LETTERS)
+            var count = 0;
+            char prevLetter = 'x';
+            foreach (var letter in dnaRow)
             {
-                if (dnaRow.Count(x => x == letter) >= PATTERN_MATCHES)
+                if (letter == prevLetter)
+                    count++;
+                else
+                {
+                    prevLetter = letter;
+                    count = 1;
+                }
+                if (count >= PATTERN_MATCHES)
                     return true;
             }
             return false;
@@ -230,6 +258,9 @@ namespace MercadolibreChallenge.API.Managers.Implementation
 
                 if (CheckRowDna(dnaRow))
                     matches++;
+
+                if (matches >= MAX_MATCHES)
+                    return matches;
             }
             return matches;
         }
